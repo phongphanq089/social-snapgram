@@ -1,0 +1,64 @@
+.bottom-bar {
+  height: auto;
+  background-color: rgba(16, 16, 18, 1);
+}
+.bottom-bar-item {
+  text-align: center;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+}
+
+.bottom-bar-item.active {
+  top: -16px;
+  background: #000000;
+  border-radius: 0 0 100% 100%;
+  z-index: 1;
+}
+.icon-1,
+.icon-2 {
+  opacity: 0;
+}
+.bottom-bar-item.active .icon-1 {
+  right: -19px;
+  position: absolute;
+  top: 0px;
+  opacity: 1;
+}
+.bottom-bar-item.active .icon-2 {
+  left: -19px;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transform: scaleX(-1);
+}
+
+.bottom-bar-item.active::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background: #877eff;
+  border-radius: 100%;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-bar-item.active .lable-text {
+  display: none;
+}
+.bottom-bar-item.active .icon-menu svg {
+  stroke: #fff;
+  width: 30px;
+  height: 30px;
+}
